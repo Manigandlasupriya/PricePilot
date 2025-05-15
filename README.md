@@ -65,14 +65,25 @@ python -m tracker.main
 
 ---
 
-## 📊 Database Schema
+## 📊Database Schema
+Table: price_history
 
-Table: `price_history`
+product_url	price	timestamp
+TEXT	FLOAT	DATETIME
 
-| id | url | price | date_checked |
-|----|-----|-------|---------------|
+product_url: The URL of the Amazon product being tracked.
 
----
+price: The price of the product at the time of checking.
+
+timestamp: The date and time when the price was recorded.
+
+Example SQL to create the table:
+CREATE TABLE price_history (
+    product_url TEXT NOT NULL,
+    price FLOAT NOT NULL,
+    timestamp DATETIME NOT NULL
+);
+
 
 ## 🎨 Sample Output
 ```
